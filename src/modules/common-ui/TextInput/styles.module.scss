@@ -1,0 +1,32 @@
+.disabled {
+  border: 1px solid #ececec !important;
+  pointer-events: none !important;
+}
+
+.textInput {
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+  padding: 0 15px;
+  background: white;
+  font-family: CircularBook, sans-serif;
+}
+
+.textInput:focus {
+  border: 1px solid red;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.textInput::placeholder {
+  opacity: 0.5;
+}
+
+.textInput:focus {
+  outline: 0;
+}
