@@ -1,4 +1,10 @@
+@font-face {
+  font-family: LatoRegular;
+  src: url("../assets/Lato-Regular.ttf");
+}
+
 body {
+  font-family: LatoRegular;
   background-image: url("../assets/img/FondFifa19.jpg");
   background-size: cover;
 }

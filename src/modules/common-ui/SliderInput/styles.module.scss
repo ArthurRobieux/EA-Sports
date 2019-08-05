@@ -12,3 +12,68 @@
 .sliderInput {
   width: 90%;
 }
+
+/* Slider */
+
+/* Webkit */
+.sliderInput {
+  -webkit-appearance: none;
+  width: 90%;
+  height: 12px;
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.sliderInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+/* Firefox */
+.sliderInput::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.sliderInput::-moz-range-progress {
+  -webkit-appearance: none;
+  background-color: #f93b78;
+  height: 12px;
+}
+
+.sliderInput::-moz-range-track {
+  background-color: #0d3473;
+}
+
+/* IE */
+.sliderInput::-ms-track {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.sliderInput::-ms-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.sliderInput::-ms-fill-lower {
+  background-color: #f93b78;
+}
+
+.sliderInput::-ms-fill-upper {
+  background: #0d3473;
+}
