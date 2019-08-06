@@ -3,6 +3,10 @@
   pointer-events: none !important;
 }
 
+.textInputContainer {
+  margin: 10px 0;
+}
+
 .textInput {
   box-sizing: border-box;
   height: 40px;
@@ -13,7 +17,6 @@
   padding: 0 15px;
   background: rgba(0, 0, 0, 0.1);
   font-family: CircularBook, sans-serif;
-  margin: 10px 0;
   color: white;
 }
 
@@ -27,8 +30,15 @@
 
 .textInput::placeholder {
   opacity: 0.5;
+  color: white;
 }
 
 .textInput:focus {
   outline: 0;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  height: 20px;
 }

@@ -6,13 +6,13 @@ import { Step1 } from "../Step1";
 import { Step2 } from "../Step2";
 import { Step3 } from "../Step3";
 
-import styles from "./styles.module.scss";
+import { Header } from "../Header";
 
 export type Profile = {
-  firstName: string;
-  lastName: string;
+  height: string;
+  weight: string;
   age: string;
-  position: { value: string; label: string } | null;
+  position: string;
 };
 
 export type Stats = {
@@ -26,10 +26,10 @@ export const Home = () => {
   const [step, setStep] = useState(1);
 
   const [profile, setProfile] = useState({
-    firstName: "",
-    lastName: "",
+    height: "",
+    weight: "",
     age: "",
-    position: { value: "att", label: "Attaquant" }
+    position: ""
   } as Profile);
 
   const [stats, setStats] = useState({
@@ -40,11 +40,7 @@ export const Home = () => {
 
   return (
     <>
-      <img
-        src={require("../../../../assets/img/LogoEASports.png")}
-        className={styles.logo}
-        alt="logo"
-      />
+      <Header />
       <Title>{t("Welcome")} - Quiz EA Sports</Title>
       {step === 1 && (
         <Step1 setStep={setStep} profile={profile} setProfile={setProfile} />

@@ -3,31 +3,43 @@ import classNames from "classnames";
 
 import styles from "./styles.module.scss";
 
-export type SelectInputOption = { label: string; value: string };
-export type ValueType = any;
+export type SelectInputOption = { label: any; value: string };
 
 export type SelectInputProps = {
   options: SelectInputOption[];
-  onChange: (value: ValueType) => void;
-  selectOption: ValueType;
+  onChange: (value: string) => void;
+  selectOption: string;
+  invalid?: boolean;
+  error?: string;
 };
 
 export const SelectInput = ({
   options,
   onChange,
-  selectOption
+  selectOption,
+  invalid,
+  error
 }: SelectInputProps) => {
   return (
-    <select
-      className={classNames(styles.selectInput)}
-      value={selectOption ? selectOption.value : null}
-      onChange={evt => onChange(evt.target.value)}
-    >
-      {options.map(option => (
-        <option value={option.value} key={option.value}>
-          {option.label}
+    <div className={styles.selectInputContainer}>
+      <select
+        className={classNames(styles.selectInput, {
+          [styles.invalid]: invalid,
+          [styles.placeholder]: selectOption === ""
+        })}
+        value={selectOption}
+        onChange={evt => onChange(evt.target.value)}
+      >
+        <option value={""} key={""} disabled selected hidden>
+          Position
         </option>
-      ))}
-    </select>
+        {options.map(option => (
+          <option value={option.value} key={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      <div className={styles.error}>{error}</div>
+    </div>
   );
 };

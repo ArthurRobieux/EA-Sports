@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextInput } from "../../../common-ui/TextInput";
 import { SelectInput } from "../../../common-ui/SelectInput";
 import { Button } from "../../../common-ui/Button";
 
 export type Profile = {
-  firstName: string;
-  lastName: string;
+  height: string;
+  weight: string;
   age: string;
-  position: { value: string; label: string } | null;
+  position: string;
 };
 
 export type Step1Props = {
@@ -17,22 +17,70 @@ export type Step1Props = {
 };
 
 export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
+  const [formErrors, setFormErrors] = useState({
+    height: "",
+    weight: "",
+    age: "",
+    position: ""
+  });
+
+  const submit = () => {
+    if (formIsValid()) setStep(2);
+  };
+
+  const formIsValid = () => {
+    const fe = {
+      height: "",
+      weight: "",
+      age: "",
+      position: ""
+    };
+    let isValid = true;
+    if (profile.height === "") {
+      fe.height = "Champs obligatoire";
+      isValid = false;
+    }
+    if (profile.weight === "") {
+      fe.weight = "Champs obligatoire";
+      isValid = false;
+    }
+    if (profile.age === "") {
+      fe.age = "Champs obligatoire";
+      isValid = false;
+    }
+    if (profile.position === "") {
+      fe.position = "Champs obligatoire";
+      isValid = false;
+    }
+    setFormErrors(fe);
+    return isValid;
+  };
+
   return (
     <div>
-      Step 1
       <TextInput
-        value={profile.firstName}
-        onChange={evt =>
-          setProfile({ ...profile, firstName: evt.target.value })
-        }
+        value={profile.height}
+        onChange={evt => setProfile({ ...profile, height: evt.target.value })}
+        placeholder={"Taille"}
+        invalid={formErrors.height !== ""}
+        error={formErrors.height}
+        type={"number"}
       />
       <TextInput
-        value={profile.lastName}
-        onChange={evt => setProfile({ ...profile, lastName: evt.target.value })}
+        value={profile.weight}
+        onChange={evt => setProfile({ ...profile, weight: evt.target.value })}
+        placeholder={"Poids"}
+        invalid={formErrors.weight !== ""}
+        error={formErrors.weight}
+        type={"number"}
       />
       <TextInput
         value={profile.age}
         onChange={evt => setProfile({ ...profile, age: evt.target.value })}
+        placeholder={"Age"}
+        invalid={formErrors.age !== ""}
+        error={formErrors.age}
+        type={"number"}
       />
       <SelectInput
         options={[
@@ -42,8 +90,10 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
         ]}
         selectOption={profile.position}
         onChange={option => setProfile({ ...profile, position: option })}
+        invalid={formErrors.position !== ""}
+        error={formErrors.position}
       />
-      <Button description="Next" onClick={() => setStep(2)} />
+      <Button description="Next" onClick={() => submit()} />
     </div>
   );
 };

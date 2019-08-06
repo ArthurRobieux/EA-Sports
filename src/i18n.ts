@@ -1,18 +1,23 @@
 import i18next from "i18next";
 import common_fr from "./translations/fr/common.json";
 import common_en from "./translations/en/common.json";
+import { initReactI18next } from "react-i18next";
 
 export const initi18n = () => {
-  i18next.init({
-    interpolation: { escapeValue: false }, // React already does escaping
-    lng: "fr", // language to use
+  let lng = "fr";
+  if (/(\/en\/)/.test(window.location.href)) {
+    lng = "en";
+  }
+  i18next.use(initReactI18next).init({
     resources: {
       en: {
-        common: common_en // 'common' is our custom namespace
+        translation: common_en
       },
       fr: {
-        common: common_fr
+        translation: common_fr
       }
-    }
+    },
+    interpolation: { escapeValue: false },
+    lng: lng
   });
 };

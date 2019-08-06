@@ -14,6 +14,7 @@ export type TextInputProps = {
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler;
   onBlur?: FocusEventHandler;
+  error?: string;
 };
 
 export const TextInput = ({
@@ -25,9 +26,10 @@ export const TextInput = ({
   placeholder,
   onBlur,
   onFocus,
-  onChange
+  onChange,
+  error
 }: TextInputProps) => (
-  <>
+  <div className={styles.textInputContainer}>
     <input
       className={classNames(className, styles.textInput, {
         [styles.disabled]: disabled,
@@ -41,5 +43,6 @@ export const TextInput = ({
       onChange={onChange}
       value={value}
     />
-  </>
+    <div className={styles.error}>{error}</div>
+  </div>
 );

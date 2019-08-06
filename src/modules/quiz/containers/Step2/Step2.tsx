@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { SliderInput } from "../../../common-ui/SliderInput";
 import { Button } from "../../../common-ui/Button";
+import styles from "./styles.module.scss";
 
 export type Stats = {
   att: string;
@@ -15,9 +16,18 @@ export type Step2Props = {
 };
 
 export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
+  const [error, setError] = useState("");
+  const submit = () => {
+    if (+stats.att + +stats.def + +stats.vit < 100) {
+      setError("Il vous faut au minimum 100points");
+    } else if (+stats.att + +stats.def + +stats.vit > 250) {
+      setError("Il vous faut au maximum 250points");
+    } else {
+      setStep(3);
+    }
+  };
   return (
     <div>
-      Step 2
       <SliderInput
         description="Attaque"
         value={stats.att}
@@ -33,7 +43,8 @@ export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
         value={stats.vit}
         onChange={value => setStats({ ...stats, vit: value })}
       />
-      <Button description="Next" onClick={() => setStep(3)} />
+      <div className={styles.error}>{error}</div>
+      <Button description="Next" onClick={() => submit()} />
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import React from "react";
 
 export type Profile = {
-  firstName: string;
-  lastName: string;
+  height: string;
+  weight: string;
   age: string;
-  position: { value: string; label: string } | null;
+  position: string;
 };
 
 export type Stats = {
@@ -21,11 +21,11 @@ export type Step3Props = {
 export const Step3 = ({ profile, stats }: Step3Props) => {
   return (
     <div>
-      <div>Step 3</div>
-      <div>{profile.firstName}</div>
-      <div>{profile.lastName}</div>
+      {console.log("PRO", profile)}
+      <div>{profile.height}</div>
+      <div>{profile.weight}</div>
       <div>{profile.age}</div>
-      <div>{profile.position && profile.position.label}</div>
+      <div>{profile.position}</div>
       <div>{stats.att}</div>
       <div>{stats.def}</div>
       <div>{stats.vit}</div>
