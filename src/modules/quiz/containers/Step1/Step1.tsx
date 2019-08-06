@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { TextInput } from "../../../common-ui/TextInput";
 import { SelectInput } from "../../../common-ui/SelectInput";
 import { Button } from "../../../common-ui/Button";
+import { Checkbox } from "../../../common-ui/Checkbox";
+import styles from "./styles.module.scss";
 
 export type Profile = {
   height: string;
@@ -21,8 +23,10 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
     height: "",
     weight: "",
     age: "",
-    position: ""
+    position: "",
+    checked: ""
   });
+  const [checked, setChecked] = useState(false);
 
   const submit = () => {
     if (formIsValid()) setStep(2);
@@ -33,7 +37,8 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
       height: "",
       weight: "",
       age: "",
-      position: ""
+      position: "",
+      checked: ""
     };
     let isValid = true;
     if (profile.height === "") {
@@ -50,6 +55,10 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
     }
     if (profile.position === "") {
       fe.position = "Champs obligatoire";
+      isValid = false;
+    }
+    if (!checked) {
+      fe.checked = "Vous devez accepter les conditions";
       isValid = false;
     }
     setFormErrors(fe);
@@ -93,6 +102,15 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
         invalid={formErrors.position !== ""}
         error={formErrors.position}
       />
+      <div className={styles.conditions} onClick={() => setChecked(!checked)}>
+        <Checkbox
+          onChange={() => setChecked(!checked)}
+          checked={checked}
+          color={"red"}
+        />
+        J'accepte les conditions
+      </div>
+      <div className={styles.error}>{formErrors.checked}</div>
       <Button description="Next" onClick={() => submit()} />
     </div>
   );

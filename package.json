@@ -13,6 +13,7 @@
     "@types/react-router-dom": "^4.3.4",
     "@types/react-select": "^3.0.0",
     "classnames": "^2.2.6",
+    "emotion": "^10.0.14",
     "i18next": "^17.0.9",
     "install": "^0.13.0",
     "node-sass": "^4.12.0",
