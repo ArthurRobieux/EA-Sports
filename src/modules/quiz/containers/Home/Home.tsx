@@ -27,7 +27,7 @@ export const Home = () => {
     firstName: "",
     lastName: "",
     age: "",
-    position: null
+    position: { value: "att", label: "Attaquant" }
   } as Profile);
 
   const [stats, setStats] = useState({

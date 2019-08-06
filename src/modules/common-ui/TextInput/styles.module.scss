@@ -6,21 +6,23 @@
 .textInput {
   box-sizing: border-box;
   height: 40px;
-  border: 1px solid lightgray;
+  border: 1px solid white;
   border-radius: 4px;
   width: 100%;
   font-size: 14px;
   padding: 0 15px;
-  background: white;
+  background: rgba(0, 0, 0, 0.1);
   font-family: CircularBook, sans-serif;
+  margin: 10px 0;
+  color: white;
 }
 
 .textInput:focus {
-  border: 1px solid red;
+  border: 1px solid #f93b78;
 }
 
 .invalid {
-  border: 1px solid red;
+  border: 1px solid #f93b78;
 }
 
 .textInput::placeholder {
