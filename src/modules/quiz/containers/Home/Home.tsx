@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Title } from "../../../common-ui";
 
 import { Step1 } from "../Step1";
@@ -21,6 +22,7 @@ export type Stats = {
 };
 
 export const Home = () => {
+  const [t] = useTranslation();
   const [step, setStep] = useState(1);
 
   const [profile, setProfile] = useState({
@@ -43,7 +45,7 @@ export const Home = () => {
         className={styles.logo}
         alt="logo"
       />
-      <Title>Quiz EA Sports</Title>
+      <Title>{t("Welcome")} - Quiz EA Sports</Title>
       {step === 1 && (
         <Step1 setStep={setStep} profile={profile} setProfile={setProfile} />
       )}

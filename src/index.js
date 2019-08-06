@@ -1,15 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { initi18n } from "./i18n";
 
 import { App } from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+initi18n();
+
+ReactDOM.render(<App />, document.getElementById("root"));
 
 serviceWorker.unregister();
