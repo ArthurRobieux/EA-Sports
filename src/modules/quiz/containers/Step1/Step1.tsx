@@ -106,7 +106,7 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
         <Checkbox
           onChange={() => setChecked(!checked)}
           checked={checked}
-          color={"red"}
+          color={"#f93b78"}
         />
         J'accepte les conditions
       </div>

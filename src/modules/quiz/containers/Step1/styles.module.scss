@@ -1,11 +1,15 @@
+@import "../../../common-ui/vars.scss";
+
 .conditions {
   display: flex;
   justify-content: left;
   align-items: center;
+  color: white;
+  font-size: 14px;
 }
 
 .error {
   font-size: 14px;
   height: 20px;
-  color: red;
+  color: $red;
 }

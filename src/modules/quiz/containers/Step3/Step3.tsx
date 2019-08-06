@@ -1,4 +1,5 @@
 import React from "react";
+import { players } from "../../../../assets/fifaData";
 
 export type Profile = {
   height: string;
@@ -21,7 +22,7 @@ export type Step3Props = {
 export const Step3 = ({ profile, stats }: Step3Props) => {
   return (
     <div>
-      {console.log("PRO", profile)}
+      JOUEUR
       <div>{profile.height}</div>
       <div>{profile.weight}</div>
       <div>{profile.age}</div>
@@ -29,6 +30,19 @@ export const Step3 = ({ profile, stats }: Step3Props) => {
       <div>{stats.att}</div>
       <div>{stats.def}</div>
       <div>{stats.vit}</div>
+      DATA
+      {players.map(
+        p =>
+          p["FIRST NAME"] === "Lionel" && (
+            <div>
+              {p["FIRST NAME"]} {p["LAST NAME"]}
+              <img
+                src={require(`../../../../assets/img/${p["card_url"]}`)}
+                alt="player"
+              />
+            </div>
+          )
+      )}
     </div>
   );
 };

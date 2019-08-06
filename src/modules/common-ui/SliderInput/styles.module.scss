@@ -1,3 +1,5 @@
+@import "../../common-ui/vars.scss";
+
 .sliderContainer {
   margin: 10px 0;
 }
@@ -60,12 +62,12 @@
 
 .slider::-moz-range-progress {
   -webkit-appearance: none;
-  background-color: #f93b78;
+  background-color: $primary;
   height: 12px;
 }
 
 .slider::-moz-range-track {
-  background-color: #0d3473;
+  background-color: $secondary;
 }
 
 /* IE */
@@ -83,9 +85,9 @@
 }
 
 .slider::-ms-fill-lower {
-  background-color: #f93b78;
+  background-color: $primary;
 }
 
 .slider::-ms-fill-upper {
-  background: #0d3473;
+  background: $secondary;
 }
