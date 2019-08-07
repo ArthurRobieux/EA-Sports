@@ -16,9 +16,12 @@ export type Profile = {
 };
 
 export type Stats = {
-  att: string;
-  def: string;
-  vit: string;
+  pace: string;
+  shooting: string;
+  passing: string;
+  dribbling: string;
+  defending: string;
+  physical: string;
 };
 
 export const Home = () => {
@@ -33,9 +36,12 @@ export const Home = () => {
   } as Profile);
 
   const [stats, setStats] = useState({
-    att: "50",
-    def: "50",
-    vit: "50"
+    pace: "50",
+    shooting: "50",
+    passing: "50",
+    dribbling: "50",
+    defending: "50",
+    physical: "50"
   } as Stats);
 
   return (

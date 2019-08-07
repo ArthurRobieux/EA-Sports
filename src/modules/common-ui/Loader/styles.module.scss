@@ -1,3 +1,5 @@
+@import "../vars.scss";
+
 .ldsDefault {
   display: inline-block;
   position: relative;
@@ -8,7 +10,7 @@
   position: absolute;
   width: 5px;
   height: 5px;
-  background: black;
+  background: $primary;
   border-radius: 50%;
   animation: ldsDefault 1.2s linear infinite;
   text-align: center;

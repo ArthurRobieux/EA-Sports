@@ -4,9 +4,12 @@ import { Button } from "../../../common-ui/Button";
 import styles from "./styles.module.scss";
 
 export type Stats = {
-  att: string;
-  def: string;
-  vit: string;
+  pace: string;
+  shooting: string;
+  passing: string;
+  dribbling: string;
+  defending: string;
+  physical: string;
 };
 
 export type Step2Props = {
@@ -18,10 +21,17 @@ export type Step2Props = {
 export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
   const [error, setError] = useState("");
   const submit = () => {
-    if (+stats.att + +stats.def + +stats.vit < 100) {
-      setError("Il vous faut au minimum 100points");
-    } else if (+stats.att + +stats.def + +stats.vit > 250) {
-      setError("Il vous faut au maximum 250points");
+    const total =
+      +stats.pace +
+      +stats.shooting +
+      +stats.passing +
+      +stats.dribbling +
+      +stats.defending +
+      +stats.physical;
+    if (total < 300) {
+      setError("Il vous faut au minimum 300points");
+    } else if (total > 450) {
+      setError("Il vous faut au maximum 450points");
     } else {
       setStep(3);
     }
@@ -29,19 +39,34 @@ export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
   return (
     <div>
       <SliderInput
-        description="Attaque"
-        value={stats.att}
-        onChange={value => setStats({ ...stats, att: value })}
+        description="Pace"
+        value={stats.pace}
+        onChange={value => setStats({ ...stats, pace: value })}
       />
       <SliderInput
-        description="Défense"
-        value={stats.def}
-        onChange={value => setStats({ ...stats, def: value })}
+        description="Shooting"
+        value={stats.shooting}
+        onChange={value => setStats({ ...stats, shooting: value })}
       />
       <SliderInput
-        description="Vitesse"
-        value={stats.vit}
-        onChange={value => setStats({ ...stats, vit: value })}
+        description="Passing"
+        value={stats.passing}
+        onChange={value => setStats({ ...stats, passing: value })}
+      />
+      <SliderInput
+        description="Dribbling"
+        value={stats.dribbling}
+        onChange={value => setStats({ ...stats, dribbling: value })}
+      />
+      <SliderInput
+        description="Defending"
+        value={stats.defending}
+        onChange={value => setStats({ ...stats, defending: value })}
+      />
+      <SliderInput
+        description="Physical"
+        value={stats.physical}
+        onChange={value => setStats({ ...stats, physical: value })}
       />
       <div className={styles.error}>{error}</div>
       <Button description="Next" onClick={() => submit()} />

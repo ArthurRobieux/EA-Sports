@@ -93,9 +93,10 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
       />
       <SelectInput
         options={[
-          { value: "att", label: "Attaque" },
+          { value: "gk", label: "Gardien" },
+          { value: "str", label: "Attaquant" },
           { value: "def", label: "Défenseur" },
-          { value: "gkp", label: "Gardien" }
+          { value: "mid", label: "Milieu" }
         ]}
         selectOption={profile.position}
         onChange={option => setProfile({ ...profile, position: option })}
