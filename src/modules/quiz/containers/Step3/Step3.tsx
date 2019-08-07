@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { players } from "../../../../assets/fifaData";
 import { Loader } from "../../../common-ui";
+import { Modal } from "../../../common-ui/Modal";
+import { Button } from "../../../common-ui/Button";
+import { ModalForm } from "./ModalForm";
+import { SharingButtons } from "./SharingButtons";
 
 export type Profile = {
   height: string;
@@ -30,6 +34,7 @@ export const Step3 = ({ profile, stats }: Step3Props) => {
     "3": {}
   } as any);
   const [loading, setLoading] = useState(true);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     const playersWithScore = [] as any[];
@@ -77,11 +82,17 @@ export const Step3 = ({ profile, stats }: Step3Props) => {
       />
       <div>TOP 2 : {topPlayers["2"]["FIRST NAME"]}</div>
       <div>TOP 3 : {topPlayers["3"]["FIRST NAME"]}</div>
-
-      {/* <img
-        src={require(`../../../../assets/img/${p["card_url"]}`)}
-        alt="player"
-      /> */}
+      <div onClick={() => setModalIsOpen(true)}>
+        <Button description="Concours" onClick={() => setModalIsOpen(true)} />
+      </div>
+      <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
+        <ModalForm setModalIsOpen={setModalIsOpen} />
+      </Modal>
+      <SharingButtons
+        sharedMessage={`Je suis ${topPlayers["1"]["FIRST NAME"]} ${
+          topPlayers["1"]["LAST NAME"]
+        } dans FIFA20.`}
+      />
     </div>
   );
 };
