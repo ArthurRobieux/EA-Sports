@@ -1,0 +1,28 @@
+.step3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.playerCards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftPlayerCard {
+  height: 300px;
+  opacity: 0.5;
+  margin-right: -75px;
+}
+
+.rightPlayerCard {
+  height: 300px;
+  opacity: 0.5;
+  margin-left: -75px;
+}
+
+.centerPlayerCard {
+  height: 400px;
+}

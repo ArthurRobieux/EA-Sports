@@ -7,4 +7,14 @@ body {
   font-family: LatoRegular;
   background-image: url("../assets/img/FondFifa19.jpg");
   background-size: cover;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  overflow-x: hidden;
 }

@@ -21,7 +21,7 @@ export const Modal = ({
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      width: "50%",
+      width: window.innerWidth <= 768 ? "80%" : "50%",
       overflow: "visible"
     },
     overlay: { zIndex: "10000000", backgroundColor: "rgba(0, 0, 0, 0.25)" }

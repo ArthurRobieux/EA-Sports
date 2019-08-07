@@ -5,6 +5,7 @@ import { Modal } from "../../../common-ui/Modal";
 import { Button } from "../../../common-ui/Button";
 import { ModalForm } from "./ModalForm";
 import { SharingButtons } from "./SharingButtons";
+import styles from "./styles.module.scss";
 
 export type Profile = {
   height: string;
@@ -73,15 +74,25 @@ export const Step3 = ({ profile, stats }: Step3Props) => {
   }
 
   return (
-    <div>
-      <div>TOP 1 : {topPlayers["1"]["FIRST NAME"]}</div>
-      {console.log(topPlayers["1"]["card_url"])}
-      <img
-        src={require(`../../../../assets/img/${topPlayers["1"]["card_url"]}`)}
-        alt="player"
-      />
-      <div>TOP 2 : {topPlayers["2"]["FIRST NAME"]}</div>
-      <div>TOP 3 : {topPlayers["3"]["FIRST NAME"]}</div>
+    <div className={styles.step3}>
+      <div className={styles.playerCards}>
+        <img
+          className={styles.leftPlayerCard}
+          src={require(`../../../../assets/img/${topPlayers["2"]["card_url"]}`)}
+          alt="player"
+        />
+        <img
+          className={styles.centerPlayerCard}
+          src={require(`../../../../assets/img/${topPlayers["1"]["card_url"]}`)}
+          alt="player"
+        />
+        <img
+          className={styles.rightPlayerCard}
+          src={require(`../../../../assets/img/${topPlayers["3"]["card_url"]}`)}
+          alt="player"
+        />
+      </div>
+
       <div onClick={() => setModalIsOpen(true)}>
         <Button description="Concours" onClick={() => setModalIsOpen(true)} />
       </div>
