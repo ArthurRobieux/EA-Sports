@@ -17,4 +17,5 @@ body {
   -o-background-size: cover;
 
   overflow-x: hidden;
+  margin: 0;
 }
