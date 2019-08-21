@@ -2,14 +2,15 @@
 
 .button {
   height: 40px;
-  width: 100px;
-  background: $primary;
+  width: 100%;
+  background: $secondary;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: $primary;
   font-size: 14px;
+  font-weight: bold;
   &:hover {
     opacity: 0.9;
     cursor: pointer;

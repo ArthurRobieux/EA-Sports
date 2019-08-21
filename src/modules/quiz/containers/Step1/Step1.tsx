@@ -107,12 +107,12 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
         <Checkbox
           onChange={() => setChecked(!checked)}
           checked={checked}
-          color={"#f93b78"}
+          color={"#fff"}
         />
         J'accepte les conditions
       </div>
       <div className={styles.error}>{formErrors.checked}</div>
-      <Button description="Next" onClick={() => submit()} />
+      <Button description="NEXT" onClick={() => submit()} />
     </div>
   );
 };

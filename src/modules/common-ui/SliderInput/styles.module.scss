@@ -2,6 +2,7 @@
 
 .sliderContainer {
   margin: 10px 0;
+  font-size: 14px;
 }
 
 .sliderInput {
@@ -46,7 +47,7 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: white;
+  background: yellow;
   cursor: pointer;
 }
 
@@ -56,18 +57,18 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: white;
+  background: yellow;
   cursor: pointer;
 }
 
 .slider::-moz-range-progress {
   -webkit-appearance: none;
-  background-color: $primary;
+  background-color: $secondary;
   height: 12px;
 }
 
 .slider::-moz-range-track {
-  background-color: $secondary;
+  background-color: blue;
 }
 
 /* IE */
@@ -80,14 +81,14 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: white;
+  background: yellow;
   cursor: pointer;
 }
 
 .slider::-ms-fill-lower {
-  background-color: $primary;
+  background-color: $secondary;
 }
 
 .slider::-ms-fill-upper {
-  background: $secondary;
+  background: blue;
 }

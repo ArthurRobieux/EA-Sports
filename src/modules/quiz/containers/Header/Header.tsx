@@ -9,10 +9,6 @@ export const Header = () => {
         className={styles.logo}
         alt="logo"
       />
-      <div>
-        <div onClick={() => (window.location.href = "/en/")}>en</div>
-        <div onClick={() => (window.location.href = "/fr/")}>fr</div>
-      </div>
     </div>
   );
 };

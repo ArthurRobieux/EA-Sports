@@ -8,6 +8,8 @@ import { Step3 } from "../Step3";
 
 import { Header } from "../Header";
 
+import styles from "./styles.module.scss";
+
 export type Profile = {
   height: string;
   weight: string;
@@ -45,9 +47,12 @@ export const Home = () => {
   } as Stats);
 
   return (
-    <>
+    <div className={styles.home}>
       <Header />
-      <Title>{t("Welcome")} - Quiz EA Sports</Title>
+      <Title>{t("Welcome")} sur le quizz FIFA 20</Title>
+      <div className={styles.subtitle}>
+        Trouvez quel joueur du Top 100 vous êtes
+      </div>
       {step === 1 && (
         <Step1 setStep={setStep} profile={profile} setProfile={setProfile} />
       )}
@@ -55,6 +60,6 @@ export const Home = () => {
         <Step2 setStep={setStep} stats={stats} setStats={setStats} />
       )}
       {step === 3 && <Step3 stats={stats} profile={profile} />}
-    </>
+    </div>
   );
 };

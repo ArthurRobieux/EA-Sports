@@ -3,8 +3,9 @@
 }
 
 .header {
-  margin: 20px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
+  top: -50px;
 }

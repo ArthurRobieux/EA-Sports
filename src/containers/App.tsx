@@ -14,6 +14,10 @@ export const App = () => {
       <Page>
         <Home />
       </Page>
+      <div>
+        <div onClick={() => (window.location.href = "/en/")}>en</div>
+        <div onClick={() => (window.location.href = "/fr/")}>fr</div>
+      </div>
       {/* <EaFooter /> */}
     </>
   );
