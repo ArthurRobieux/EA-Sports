@@ -25,7 +25,7 @@ export const SliderInput = ({
           value={value}
           onChange={evt => onChange(evt.target.value)}
           style={{
-            background: `linear-gradient(to right, #fff 0%, #fff ${value}%, #ececec ${value}%, #ececec 100%)`
+            background: `linear-gradient(to right, #fff 0%, #fff ${value}%, rgba(255, 255, 255, 0.3) ${value}%, rgba(255, 255, 255, 0.3) 100%)`
           }}
         />
         <div className={styles.value}>{value}</div>

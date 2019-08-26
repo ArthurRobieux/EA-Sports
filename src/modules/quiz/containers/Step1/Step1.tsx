@@ -4,6 +4,7 @@ import { SelectInput } from "../../../common-ui/SelectInput";
 import { Button } from "../../../common-ui/Button";
 import { Checkbox } from "../../../common-ui/Checkbox";
 import styles from "./styles.module.scss";
+import { useTranslation } from "react-i18next";
 
 export type Profile = {
   height: string;
@@ -19,6 +20,7 @@ export type Step1Props = {
 };
 
 export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
+  const [t] = useTranslation();
   const [formErrors, setFormErrors] = useState({
     height: "",
     weight: "",
@@ -114,7 +116,9 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
           checked={checked}
           color={"#fff"}
         />
-        J'accepte les conditions
+        {t(
+          "Je suis d'accord que ces données sont utilisées pour calculer les résultats du quiz"
+        )}
       </div>
       <div className={styles.error}>
         {formErrors.checked !== "" && (
