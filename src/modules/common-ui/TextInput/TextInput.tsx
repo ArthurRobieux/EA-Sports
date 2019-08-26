@@ -43,6 +43,15 @@ export const TextInput = ({
       onChange={onChange}
       value={value}
     />
-    <div className={styles.error}>{error}</div>
+    <div className={styles.error}>
+      {error !== "" && (
+        <img
+          src={require("../../../assets/img/Attention.svg")}
+          alt="logo"
+          className={styles.attention}
+        />
+      )}
+      {error}
+    </div>
   </div>
 );

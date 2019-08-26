@@ -1,9 +1,9 @@
 @import "../../../common-ui/vars.scss";
 
 .home {
-  background: $primary;
+  background-image: linear-gradient(to top, #dd5157, #dc4870);
   border-radius: 4px;
-  padding: 20px 100px;
+  padding: 20px 150px;
   margin: 50px 0;
   @media only screen and (max-width: 1200px) {
     & {
@@ -15,12 +15,4 @@
       padding: 20px 20px;
     }
   }
-}
-
-.subtitle {
-  color: $secondary;
-  opacity: 0.5;
-  font-size: 14px;
-  text-align: center;
-  padding-bottom: 10px;
 }

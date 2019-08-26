@@ -11,5 +11,16 @@
 .error {
   font-size: 14px;
   height: 20px;
-  color: $red;
+  color: white;
+  opacity: 0.5;
+}
+
+.stepIcon {
+  margin: auto;
+  display: flex;
+  padding: 10px 0;
+}
+
+.attention {
+  margin-right: 5px;
 }

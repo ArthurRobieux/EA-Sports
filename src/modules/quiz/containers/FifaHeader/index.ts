@@ -1,1 +1,0 @@
-export { FifaHeader } from "./FifaHeader";

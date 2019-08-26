@@ -67,6 +67,11 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
 
   return (
     <div>
+      <img
+        src={require("../../../../assets/img/Step1.svg")}
+        alt="logo"
+        className={styles.stepIcon}
+      />
       <TextInput
         value={profile.height}
         onChange={evt => setProfile({ ...profile, height: evt.target.value })}
@@ -111,7 +116,16 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
         />
         J'accepte les conditions
       </div>
-      <div className={styles.error}>{formErrors.checked}</div>
+      <div className={styles.error}>
+        {formErrors.checked !== "" && (
+          <img
+            src={require("../../../../assets/img/Attention.svg")}
+            alt="logo"
+            className={styles.attention}
+          />
+        )}
+        {formErrors.checked}
+      </div>
       <Button description="NEXT" onClick={() => submit()} />
     </div>
   );

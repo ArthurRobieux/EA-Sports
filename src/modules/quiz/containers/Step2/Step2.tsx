@@ -38,6 +38,11 @@ export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
   };
   return (
     <div>
+      <img
+        src={require("../../../../assets/img/Step2.svg")}
+        alt="logo"
+        className={styles.stepIcon}
+      />
       <SliderInput
         description="Pace"
         value={stats.pace}

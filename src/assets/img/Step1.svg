@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="57" height="20" viewBox="0 0 57 20">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="20" height="20" fill="#FFF" fill-rule="nonzero" rx="9.5"/>
+        <path fill="#FFF" fill-rule="nonzero" d="M37.118 12H20V9h17.013c.26-5.014 4.408-9 9.487-9h1A9.5 9.5 0 0 1 57 9.5v1a9.5 9.5 0 0 1-9.5 9.5h-1c-4.736 0-8.663-3.466-9.382-8z" opacity=".2"/>
+        <text fill="#DC486F" font-family="DINPro-Bold, DIN Pro" font-size="13" font-weight="bold">
+            <tspan x="6" y="14">1</tspan>
+        </text>
+        <text fill="#FFF" font-family="DINPro-Bold, DIN Pro" font-size="13" font-weight="bold">
+            <tspan x="43" y="14">2</tspan>
+        </text>
+    </g>
+</svg>

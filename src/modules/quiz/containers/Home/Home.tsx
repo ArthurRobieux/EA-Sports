@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Title } from "../../../common-ui";
 
 import { Step1 } from "../Step1";
 import { Step2 } from "../Step2";
@@ -49,10 +48,6 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <Header />
-      <Title>{t("Welcome")} sur le quizz FIFA 20</Title>
-      <div className={styles.subtitle}>
-        Trouvez quel joueur du Top 100 vous êtes
-      </div>
       {step === 1 && (
         <Step1 setStep={setStep} profile={profile} setProfile={setProfile} />
       )}

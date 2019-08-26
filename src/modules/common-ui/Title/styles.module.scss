@@ -1,6 +1,10 @@
+@import "../vars.scss";
+
 .title {
-  font-size: 24px;
-  color: white;
+  font-size: 25px;
+  color: $primary;
+  background: white;
+  padding: 15px;
   font-weight: bold;
   text-align: center;
 }

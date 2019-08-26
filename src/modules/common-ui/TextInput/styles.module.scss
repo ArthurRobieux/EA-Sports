@@ -25,7 +25,7 @@
 }
 
 .invalid {
-  border: 1px solid red;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .textInput::placeholder {
@@ -38,7 +38,14 @@
 }
 
 .error {
-  color: red;
+  color: white;
+  opacity: 0.5;
   font-size: 14px;
   height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.attention {
+  margin-right: 5px;
 }

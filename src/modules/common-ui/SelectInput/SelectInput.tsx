@@ -39,7 +39,16 @@ export const SelectInput = ({
           </option>
         ))}
       </select>
-      <div className={styles.error}>{error}</div>
+      <div className={styles.error}>
+        {error !== "" && (
+          <img
+            src={require("../../../assets/img/Attention.svg")}
+            alt="logo"
+            className={styles.attention}
+          />
+        )}
+        {error}
+      </div>
     </div>
   );
 };

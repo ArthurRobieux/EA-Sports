@@ -1,1 +1,0 @@
-export { FifaFooter } from "./FifaFooter";
