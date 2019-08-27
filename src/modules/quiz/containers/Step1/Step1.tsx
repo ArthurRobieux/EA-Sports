@@ -48,8 +48,8 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
       fe.height = t("Entrez un chiffre supérieur à 0.");
       isValid = false;
     }
-    if (+profile.height > 150) {
-      fe.height = t("Entrez un chiffre inférieur à 150.");
+    if (+profile.height > 250) {
+      fe.height = t("Entrez un chiffre inférieur à 250.");
       isValid = false;
     }
     if (profile.height === "") {

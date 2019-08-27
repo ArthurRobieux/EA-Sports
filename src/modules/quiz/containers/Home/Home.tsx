@@ -26,8 +26,8 @@ export type Stats = {
 };
 
 export const Home = () => {
-  const [t] = useTranslation();
-  const [step, setStep] = useState(2);
+  // const [t] = useTranslation();
+  const [step, setStep] = useState(1);
 
   const [profile, setProfile] = useState({
     height: "",
