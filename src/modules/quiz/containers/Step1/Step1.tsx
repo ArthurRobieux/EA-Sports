@@ -150,19 +150,11 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
           "Je suis d'accord que ces données sont utilisées pour calculer les résultats du quiz"
         )}
       </div>
-      <div className={styles.error}>
-        {formErrors.checked !== "" && (
-          <img
-            src={require("../../../../assets/img/Attention.svg")}
-            alt="logo"
-            className={styles.attention}
-          />
-        )}
-        {formErrors.checked}
-      </div>
+
       <Button
         description={t("Suivant").toUpperCase()}
         onClick={() => submit()}
+        disabled={!checked}
       />
     </div>
   );

@@ -21,4 +21,26 @@
   align-items: end;
   font-family: DINProLight;
   padding-bottom: 15px;
+  text-align: left;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.informations {
+  font-size: 11px;
+  color: white;
+  display: flex;
+  align-items: end;
+  font-family: DINProLight;
+  padding-bottom: 15px;
+  text-align: left;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.infoIcon {
+  margin-right: 5px;
 }

@@ -60,8 +60,17 @@ export const ModalForm = ({ setModalIsOpen }: ModalFormProps) => {
           "J'accepte que mon adresse email soit utilisée pour le tirage au sort de ce jeu-concours"
         )}
       </div>
+      <div className={styles.informations}>
+        <img
+          src={require("../../../../../assets/img/Information.svg")}
+          className={styles.infoIcon}
+        />
+        {t(
+          "Attention, tu dois partager le résultat sur les réseaux sociaux pour avoir une chance de gagner ton jeu FIFA 20"
+        )}
+      </div>
       <Button
-        description={t("Je m'inscris")}
+        description={t("Je m'inscris").toUpperCase()}
         onClick={() => submit()}
         disabled={!checked}
       />

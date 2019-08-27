@@ -95,29 +95,17 @@ export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
           onChange={value => setStats({ ...stats, physical: value })}
         />
       </div>
-
-      {total < 300 && (
-        <div className={styles.error}>
+      <div className={styles.error}>
+        {(total < 300 || total > 450) && (
           <img
             src={require("../../../../assets/img/Attention.svg")}
             alt="logo"
             className={styles.attention}
           />
-          {t("Il vous faut au minimum 300 points")}
-        </div>
-      )}
-
-      {total > 450 && (
-        <div className={styles.error}>
-          <img
-            src={require("../../../../assets/img/Attention.svg")}
-            alt="logo"
-            className={styles.attention}
-          />
-          {t("Il vous faut au maximum 450 points")}
-        </div>
-      )}
-
+        )}
+        {total < 300 && t("Il vous faut au minimum 300 points")}
+        {total > 450 && t("Il vous faut au maximum 450 points")}
+      </div>
       <Button
         description={t("Voir les résultats")}
         onClick={() => submit()}

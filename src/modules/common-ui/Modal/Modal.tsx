@@ -29,9 +29,10 @@ export const Modal = ({
       backgroundImage: `url(${Fifa20Background})`,
       backgroundSize: "cover",
       backgroundPosition: "50% 0%",
-      backgroundRepeat: "no-repeat"
+      backgroundRepeat: "no-repeat",
+      padding: "30px"
     },
-    overlay: { zIndex: "10000000", backgroundColor: "rgba(0, 0, 0, 0.25)" }
+    overlay: { zIndex: "10000000", backgroundColor: "rgba(0, 0, 0, 0.75)" }
   };
   return (
     <ReactModal
@@ -40,6 +41,11 @@ export const Modal = ({
       style={customStyles}
       contentLabel="Example Modal"
     >
+      <img
+        src={require("../../../assets/img/IconClose.svg")}
+        className={styles.close}
+        onClick={() => setModalIsOpen(false)}
+      />
       <div className={styles.modal}>
         <div className={styles.modalContent}>{children}</div>
       </div>

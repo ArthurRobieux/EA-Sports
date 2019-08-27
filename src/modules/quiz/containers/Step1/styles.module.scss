@@ -3,11 +3,14 @@
 .conditions {
   display: flex;
   justify-content: left;
-  align-items: center;
+  align-items: end;
   color: white;
   font-size: 14px;
-  padding-bottom: 15px;
+  padding: 20px 0;
   font-family: DINProLight;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .error {
