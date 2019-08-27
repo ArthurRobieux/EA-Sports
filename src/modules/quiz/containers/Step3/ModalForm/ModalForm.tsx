@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { Button } from "../../../../common-ui/Button";
 import { TextInput } from "../../../../common-ui/TextInput";
 import { useTranslation } from "react-i18next";
 import { Checkbox } from "../../../../common-ui/Checkbox";
+import Spreadsheet from "edit-google-spreadsheet";
 
 export type ModalFormProps = {
   setModalIsOpen: (b: boolean) => void;
@@ -15,6 +16,63 @@ export const ModalForm = ({ setModalIsOpen }: ModalFormProps) => {
   const [formErrors, setFormErrors] = useState({ email: "" });
   const [checked, setChecked] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [nbRows, setNbRows] = useState(0);
+
+  useEffect(() => {
+    Spreadsheet.load(
+      {
+        debug: true,
+        worksheetName: "Feuille 1",
+        spreadsheetId: "1_yzM3GpGo2vgy53o9IAVaOQGHBbC3Mill33bhNXoj6U",
+
+        // OR 3. OAuth2 (See get_oauth2_permissions.js)
+        oauth2: {
+          client_id:
+            "960819514742-38d0s20softq72rl3tfbbptqomjklr5t.apps.googleusercontent.com",
+          client_secret: "RLILlOlYB-lgRkMIY5c-9WOP",
+          refresh_token: "1/w0i4oKAHi8o7nV9v9I7HHi-2UltmVo7gXlyLRURXR38"
+        }
+      },
+      function sheetReady(err: any, spreadsheet: any) {
+        if (err) throw err;
+
+        spreadsheet.receive(function(err: any, rows: any, info: any) {
+          if (err) throw err;
+          // console.log("Found rows:", rows);
+          setNbRows(Object.keys(rows).length);
+        });
+      }
+    );
+  }, []);
+
+  const updateSheet = () => {
+    Spreadsheet.load(
+      {
+        debug: true,
+        worksheetName: "Feuille 1",
+        spreadsheetId: "1_yzM3GpGo2vgy53o9IAVaOQGHBbC3Mill33bhNXoj6U",
+        // OR 3. OAuth2 (See get_oauth2_permissions.js)
+        oauth2: {
+          client_id:
+            "960819514742-38d0s20softq72rl3tfbbptqomjklr5t.apps.googleusercontent.com",
+          client_secret: "RLILlOlYB-lgRkMIY5c-9WOP",
+          refresh_token: "1/w0i4oKAHi8o7nV9v9I7HHi-2UltmVo7gXlyLRURXR38"
+        }
+      },
+      function sheetReady(err: any, spreadsheet: any) {
+        if (err) throw err;
+
+        spreadsheet.add({
+          [nbRows + 1]: { 1: form.email }
+        });
+
+        spreadsheet.send(function(err: any) {
+          if (err) throw err;
+          setSuccess(true);
+        });
+      }
+    );
+  };
 
   const submit = () => {
     const emailFormat = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,30}\.[a-z]{2,4}$/;
@@ -30,7 +88,7 @@ export const ModalForm = ({ setModalIsOpen }: ModalFormProps) => {
     }
     setFormErrors(fe);
     if (isValid) {
-      setSuccess(true);
+      updateSheet();
     }
   };
 
