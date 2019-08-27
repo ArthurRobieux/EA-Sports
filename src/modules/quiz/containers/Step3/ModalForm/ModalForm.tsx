@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import styles from "./styles.module.scss";
+// import styles from "./styles.module.scss";
 import { Button } from "../../../../common-ui/Button";
 import { TextInput } from "../../../../common-ui/TextInput";
+import { useTranslation } from "react-i18next";
 
 export type ModalFormProps = {
   setModalIsOpen: (b: boolean) => void;
 };
 
 export const ModalForm = ({ setModalIsOpen }: ModalFormProps) => {
+  const [t] = useTranslation();
   const [form, setForm] = useState({ email: "" });
   const [formErrors, setFormErrors] = useState({ email: "" });
 
@@ -16,11 +18,11 @@ export const ModalForm = ({ setModalIsOpen }: ModalFormProps) => {
     const fe = { email: "" };
     let isValid = true;
     if (form.email === "") {
-      fe.email = "Champs obligatoire";
+      fe.email = t("Champs obligatoire");
       isValid = false;
     }
     if (form.email !== "" && !emailFormat.test(form.email)) {
-      fe.email = "Mauvais format";
+      fe.email = t("Mauvais format");
       isValid = false;
     }
     setFormErrors(fe);

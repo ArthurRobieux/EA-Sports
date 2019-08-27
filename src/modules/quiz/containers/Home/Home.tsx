@@ -27,13 +27,13 @@ export type Stats = {
 
 export const Home = () => {
   // const [t] = useTranslation();
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
 
   const [profile, setProfile] = useState({
-    height: "180",
-    weight: "80",
-    age: "23",
-    position: "gk"
+    height: "",
+    weight: "",
+    age: "",
+    position: ""
   } as Profile);
 
   const [stats, setStats] = useState({
