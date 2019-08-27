@@ -49,6 +49,14 @@ export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
 
   return (
     <div>
+      <div className={styles.text}>
+        <div>{t("Maintenant, attribue-toi les 6 notes FIFA.")}</div>
+        <div>
+          {`${t("Tu as réparti")} ${total} ${t("point(s). Il te reste")}
+        ${450 - total > 0 ? 450 - total : 0}
+        ${t("point(s) à répartir.")}`}
+        </div>
+      </div>
       <img
         src={require("../../../../assets/img/Step2.svg")}
         alt="logo"

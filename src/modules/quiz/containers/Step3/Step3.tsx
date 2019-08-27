@@ -79,7 +79,9 @@ export const Step3 = ({ profile, stats }: Step3Props) => {
   return (
     <div className={styles.step3}>
       <div className={styles.title}>{t("Félicitation !")}</div>
-      <div className={styles.subTitle}>{t("C'est un bon joueur.")}</div>
+      <div className={styles.subTitle}>{`${t("Tu es")} ${
+        topPlayers["1"]["FIRST NAME"]
+      } ${topPlayers["1"]["LAST NAME"]}. ${t("C'est un super joueur.")}`}</div>
       <div className={styles.playerCards}>
         <img
           className={styles.leftPlayerCard}

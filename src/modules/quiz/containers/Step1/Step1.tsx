@@ -94,6 +94,10 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
 
   return (
     <div>
+      <div className={styles.text}>
+        <div>{t("Découvre quel joueur du Top 100 de FIFA 20 tu es.")}</div>
+        <div>{t("Pour commencer, remplis ces quelques informations.")}</div>
+      </div>
       <img
         src={require("../../../../assets/img/Step1.svg")}
         alt="logo"
