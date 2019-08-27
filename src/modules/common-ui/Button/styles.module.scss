@@ -16,3 +16,10 @@
     cursor: pointer;
   }
 }
+
+.disabled {
+  opacity: 0.5 !important;
+  &:hover {
+    pointer-events: none;
+  }
+}

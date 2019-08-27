@@ -27,7 +27,7 @@ export type Stats = {
 
 export const Home = () => {
   const [t] = useTranslation();
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
 
   const [profile, setProfile] = useState({
     height: "",
@@ -47,14 +47,16 @@ export const Home = () => {
 
   return (
     <div className={styles.home}>
-      <Header />
-      {step === 1 && (
-        <Step1 setStep={setStep} profile={profile} setProfile={setProfile} />
-      )}
-      {step === 2 && (
-        <Step2 setStep={setStep} stats={stats} setStats={setStats} />
-      )}
-      {step === 3 && <Step3 stats={stats} profile={profile} />}
+      <div className={styles.container}>
+        <Header />
+        {step === 1 && (
+          <Step1 setStep={setStep} profile={profile} setProfile={setProfile} />
+        )}
+        {step === 2 && (
+          <Step2 setStep={setStep} stats={stats} setStats={setStats} />
+        )}
+        {step === 3 && <Step3 stats={stats} profile={profile} />}
+      </div>
     </div>
   );
 };

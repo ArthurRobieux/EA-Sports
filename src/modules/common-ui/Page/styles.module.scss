@@ -1,11 +1,11 @@
 .page {
-  width: 50%;
+  width: 65%;
   height: 100%;
   margin: auto;
   font-size: 18px;
   @media only screen and (max-width: 1200px) {
     & {
-      width: 65%;
+      width: 75%;
     }
   }
   @media only screen and (max-width: 800px) {

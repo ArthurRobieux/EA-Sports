@@ -3,16 +3,31 @@
 .home {
   background-image: linear-gradient(to top, #dd5157, #dc4870);
   border-radius: 4px;
-  padding: 20px 150px;
+  padding: 20px 20px;
   margin: 50px 0;
   @media only screen and (max-width: 1200px) {
     & {
-      padding: 20px 50px;
+      padding: 20px 20px;
     }
   }
   @media only screen and (max-width: 800px) {
     & {
       padding: 20px 20px;
+    }
+  }
+}
+
+.container {
+  width: 45%;
+  margin: auto;
+  @media only screen and (max-width: 1200px) {
+    & {
+      width: 50%;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    & {
+      width: 90%;
     }
   }
 }

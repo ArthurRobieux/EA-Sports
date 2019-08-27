@@ -43,24 +43,49 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
       checked: ""
     };
     let isValid = true;
+
+    if (+profile.height <= 0) {
+      fe.height = t("Entrez un chiffre supérieur à 0.");
+      isValid = false;
+    }
+    if (+profile.height > 150) {
+      fe.height = t("Entrez un chiffre inférieur à 150.");
+      isValid = false;
+    }
     if (profile.height === "") {
-      fe.height = "Champs obligatoire";
+      fe.height = t("Champs obligatoire");
+      isValid = false;
+    }
+    if (+profile.weight <= 0) {
+      fe.weight = t("Entrez un chiffre supérieur à 0.");
+      isValid = false;
+    }
+    if (+profile.weight > 500) {
+      fe.weight = t("Entrez un chiffre inférieur à 500.");
       isValid = false;
     }
     if (profile.weight === "") {
-      fe.weight = "Champs obligatoire";
+      fe.weight = t("Champs obligatoire");
+      isValid = false;
+    }
+    if (+profile.age <= 0) {
+      fe.age = t("Entrez un chiffre supérieur à 0.");
+      isValid = false;
+    }
+    if (+profile.age > 150) {
+      fe.age = t("Entrez un chiffre inférieur à 150.");
       isValid = false;
     }
     if (profile.age === "") {
-      fe.age = "Champs obligatoire";
+      fe.age = t("Champs obligatoire");
       isValid = false;
     }
     if (profile.position === "") {
-      fe.position = "Champs obligatoire";
+      fe.position = t("Champs obligatoire");
       isValid = false;
     }
     if (!checked) {
-      fe.checked = "Vous devez accepter les conditions";
+      fe.checked = t("Vous devez accepter les conditions");
       isValid = false;
     }
     setFormErrors(fe);
@@ -77,7 +102,7 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
       <TextInput
         value={profile.height}
         onChange={evt => setProfile({ ...profile, height: evt.target.value })}
-        placeholder={"Taille"}
+        placeholder={t("Taille (cm)")}
         invalid={formErrors.height !== ""}
         error={formErrors.height}
         type={"number"}
@@ -85,7 +110,7 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
       <TextInput
         value={profile.weight}
         onChange={evt => setProfile({ ...profile, weight: evt.target.value })}
-        placeholder={"Poids"}
+        placeholder={t("Poids (kg)")}
         invalid={formErrors.weight !== ""}
         error={formErrors.weight}
         type={"number"}
@@ -93,17 +118,17 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
       <TextInput
         value={profile.age}
         onChange={evt => setProfile({ ...profile, age: evt.target.value })}
-        placeholder={"Age"}
+        placeholder={t("Age")}
         invalid={formErrors.age !== ""}
         error={formErrors.age}
         type={"number"}
       />
       <SelectInput
         options={[
-          { value: "gk", label: "Gardien" },
-          { value: "str", label: "Attaquant" },
-          { value: "def", label: "Défenseur" },
-          { value: "mid", label: "Milieu" }
+          { value: "gk", label: t("Gardien") },
+          { value: "str", label: t("Attaquant") },
+          { value: "def", label: t("Défenseur") },
+          { value: "mid", label: t("Milieu") }
         ]}
         selectOption={profile.position}
         onChange={option => setProfile({ ...profile, position: option })}
@@ -130,7 +155,7 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
         )}
         {formErrors.checked}
       </div>
-      <Button description="NEXT" onClick={() => submit()} />
+      <Button description={t("NEXT")} onClick={() => submit()} />
     </div>
   );
 };
