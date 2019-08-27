@@ -9,20 +9,51 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 250px;
+  margin-top: 50px;
 }
 
 .leftPlayerCard {
-  height: 300px;
+  height: 250px;
   opacity: 0.5;
-  margin-right: -75px;
+  margin-right: -100px;
 }
 
 .rightPlayerCard {
-  height: 300px;
+  height: 250px;
   opacity: 0.5;
-  margin-left: -75px;
+  margin-left: -100px;
 }
 
 .centerPlayerCard {
-  height: 400px;
+  height: 350px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  padding-top: 20px;
+}
+
+.subTitle {
+  font-size: 14px;
+  opacity: 0.8;
+  color: white;
+}
+
+.sharingButtonsInactive {
+  opacity: 0;
+  transition-duration: 0.3s;
+  pointer-events: none;
+}
+
+.sharingButtonsActive {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+.button {
+  margin: 10px 0;
+  width: 100%;
 }

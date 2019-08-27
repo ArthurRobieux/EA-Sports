@@ -14,7 +14,7 @@ export const Header = () => {
           alt="logo"
         />
       </div>
-      <Title>{t("Quel joueur du TOP 100 es-tu ?")}</Title>
+      <Title>{t("Quel joueur du TOP 100 es-tu ?").toUpperCase()}</Title>
     </>
   );
 };

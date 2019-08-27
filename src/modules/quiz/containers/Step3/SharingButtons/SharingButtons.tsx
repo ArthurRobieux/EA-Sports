@@ -1,5 +1,5 @@
 import React from "react";
-// import styles from "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 export type SharingButtonsProps = {
   sharedMessage: string;
@@ -9,7 +9,7 @@ export const SharingButtons = ({ sharedMessage }: SharingButtonsProps) => {
   const sharedUrl = "www.google.fr";
 
   return (
-    <div>
+    <div className={styles.buttons}>
       <a
         target="popup"
         onClick={() => {
@@ -21,7 +21,11 @@ export const SharingButtons = ({ sharedMessage }: SharingButtonsProps) => {
           return false;
         }}
       >
-        FB
+        <img
+          src={require("../../../../../assets/img/LogoFacebook.svg")}
+          alt="logo"
+          className={styles.logo}
+        />
       </a>
 
       <a
@@ -35,21 +39,11 @@ export const SharingButtons = ({ sharedMessage }: SharingButtonsProps) => {
           return false;
         }}
       >
-        TWITTER
-      </a>
-
-      <a
-        target="popup"
-        onClick={() => {
-          window.open(
-            `https://plus.google.com/share?url=${sharedUrl}&amp;text=${sharedMessage}`,
-            "popup",
-            "width=600,height=600"
-          );
-          return false;
-        }}
-      >
-        GOOGLE
+        <img
+          src={require("../../../../../assets/img/LogoTwitter.svg")}
+          alt="logo"
+          className={styles.logo}
+        />
       </a>
 
       <a
@@ -63,7 +57,11 @@ export const SharingButtons = ({ sharedMessage }: SharingButtonsProps) => {
           return false;
         }}
       >
-        WA
+        <img
+          src={require("../../../../../assets/img/LogoWhatsapp.svg")}
+          alt="logo"
+          className={styles.logo}
+        />
       </a>
     </div>
   );

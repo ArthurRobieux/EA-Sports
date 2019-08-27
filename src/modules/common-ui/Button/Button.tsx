@@ -7,13 +7,20 @@ export type ButtonProps = {
   description: string;
   disabled?: boolean;
   onClick: () => void;
+  yellow?: boolean;
 };
 
-export const Button = ({ description, disabled, onClick }: ButtonProps) => {
+export const Button = ({
+  description,
+  disabled,
+  onClick,
+  yellow
+}: ButtonProps) => {
   return (
     <div
       className={classnames(styles.button, {
-        [styles.disabled]: disabled
+        [styles.disabled]: disabled,
+        [styles.yellow]: yellow
       })}
       onClick={() => onClick()}
     >
