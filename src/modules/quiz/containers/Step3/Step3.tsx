@@ -69,6 +69,15 @@ export const Step3 = ({ profile, stats }: Step3Props) => {
       "2": playersWithScore[1].p,
       "3": playersWithScore[2].p
     });
+
+    if (/(lenaic)/.test(window.location.href)) {
+      setTopPlayers({
+        "1": players.find(p => p["COMMON NAME"] === "Cristiano Ronaldo"),
+        "2": players.find(p => p["COMMON NAME"] === "Cristiano Ronaldo"),
+        "3": players.find(p => p["COMMON NAME"] === "Cristiano Ronaldo")
+      });
+    }
+
     setLoading(false);
   }, []);
 
