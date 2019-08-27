@@ -1,23 +1,25 @@
 @import "../../../common-ui/vars.scss";
 
 .home {
-  background-image: linear-gradient(to top, #dd5157, #dc4870);
+  background-image: linear-gradient(224deg, #ff1a65, #ff2941);
   border-radius: 4px;
-  padding: 20px 20px;
+  padding: 20px 20px 0 20px;
   margin: 50px 0;
   @media only screen and (max-width: 1200px) {
     & {
-      padding: 20px 20px;
+      padding: 20px 20px 0 20px;
     }
   }
   @media only screen and (max-width: 800px) {
     & {
-      padding: 20px 20px;
+      padding: 20px 20px 0 20px;
     }
   }
 }
 
 .container {
+  position: relative;
+  top: -35px;
   width: 45%;
   margin: auto;
   @media only screen and (max-width: 1200px) {

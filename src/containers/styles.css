@@ -1,11 +1,16 @@
 @font-face {
-  font-family: LatoRegular;
-  src: url("../assets/fonts/Lato-Regular.ttf");
+  font-family: DINPro;
+  src: url("../assets/fonts/DINPro.woff");
+}
+
+@font-face {
+  font-family: DINProLight;
+  src: url("../assets/fonts/DINPro-Light.otf");
 }
 
 body {
-  font-family: LatoRegular;
-  background-image: url("../assets/img/FondFifa19.jpg");
+  font-family: DINPro;
+  background-image: url("../assets/img/Fifa20Bakckground.jpg");
   background-size: cover;
   background-position: 50% 0%;
   background-repeat: no-repeat;

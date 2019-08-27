@@ -9,7 +9,7 @@ export const Header = () => {
     <>
       <div className={styles.logoContainer}>
         <img
-          src={require("../../../../assets/img/LogoEASports.png")}
+          src={require("../../../../assets/img/HeaderPlayers.png")}
           className={styles.logo}
           alt="logo"
         />
