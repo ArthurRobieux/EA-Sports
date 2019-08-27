@@ -14,6 +14,7 @@ export const ModalForm = ({ setModalIsOpen }: ModalFormProps) => {
   const [form, setForm] = useState({ email: "" });
   const [formErrors, setFormErrors] = useState({ email: "" });
   const [checked, setChecked] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const submit = () => {
     const emailFormat = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,30}\.[a-z]{2,4}$/;
@@ -29,9 +30,27 @@ export const ModalForm = ({ setModalIsOpen }: ModalFormProps) => {
     }
     setFormErrors(fe);
     if (isValid) {
-      setModalIsOpen(false);
+      setSuccess(true);
     }
   };
+
+  if (success) {
+    return (
+      <div className={styles.content}>
+        <img
+          src={require("../../../../../assets/img/PlayersWithLogo.png")}
+          className={styles.players}
+        />
+        <div className={styles.success}>
+          {t("Ta participation au concours a été prise en compte")}
+        </div>
+        <Button
+          description={t("Continuer").toUpperCase()}
+          onClick={() => setModalIsOpen(false)}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={styles.content}>
