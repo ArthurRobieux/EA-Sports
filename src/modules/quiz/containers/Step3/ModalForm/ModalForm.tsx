@@ -36,13 +36,13 @@ export const ModalForm = ({ setModalIsOpen }: ModalFormProps) => {
       <TextInput
         value={form.email}
         onChange={evt => setForm({ ...form, email: evt.target.value })}
-        placeholder={"Email"}
+        placeholder={t("Email")}
         invalid={formErrors.email !== ""}
         error={formErrors.email}
         type={"text"}
       />
-      <Button description="Envoyer" onClick={() => submit()} />
-      <Button description="Annuler" onClick={() => setModalIsOpen(false)} />
+      <Button description={t("Envoyer")} onClick={() => submit()} />
+      <Button description={t("Annuler")} onClick={() => setModalIsOpen(false)} />
     </div>
   );
 };

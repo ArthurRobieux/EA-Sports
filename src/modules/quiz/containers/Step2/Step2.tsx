@@ -50,11 +50,12 @@ export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
   return (
     <div>
       <div className={styles.text}>
-        <div>{t("Maintenant, attribue-toi les 6 notes FIFA.")}</div>
+        <div>{t("Maintenant, attribue-toi les 6 notes FIFA")}</div>
         <div>
-          {`${t("Tu as réparti")} ${total} ${t("point(s). Il te reste")}
-        ${450 - total > 0 ? 450 - total : 0}
-        ${t("point(s) à répartir.")}`}
+          {t("Tu as réparti X points Il te reste Y points à répartir", {
+            x: total,
+            y: 450 - total > 0 ? 450 - total : 0
+          })}
         </div>
       </div>
       <img
@@ -102,7 +103,7 @@ export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
             alt="logo"
             className={styles.attention}
           />
-          {t("Il vous faut au minimum 300 points.")}
+          {t("Il vous faut au minimum 300 points")}
         </div>
       )}
 
@@ -113,7 +114,7 @@ export const Step2 = ({ setStep, stats, setStats }: Step2Props) => {
             alt="logo"
             className={styles.attention}
           />
-          {t("Il vous faut au maximum 450 points.")}
+          {t("Il vous faut au maximum 450 points")}
         </div>
       )}
 

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 
 import { Step1 } from "../Step1";
 import { Step2 } from "../Step2";
@@ -26,7 +25,6 @@ export type Stats = {
 };
 
 export const Home = () => {
-  // const [t] = useTranslation();
   const [step, setStep] = useState(1);
 
   const [profile, setProfile] = useState({

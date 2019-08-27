@@ -21,6 +21,7 @@ export type Step1Props = {
 
 export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
   const [t] = useTranslation();
+
   const [formErrors, setFormErrors] = useState({
     height: "",
     weight: "",
@@ -45,11 +46,11 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
     let isValid = true;
 
     if (+profile.height <= 0) {
-      fe.height = t("Entrez un chiffre supérieur à 0.");
+      fe.height = t("Entrez un chiffre supérieur à 0");
       isValid = false;
     }
     if (+profile.height > 250) {
-      fe.height = t("Entrez un chiffre inférieur à 250.");
+      fe.height = t("Entrez un chiffre inférieur à", { x: "250" });
       isValid = false;
     }
     if (profile.height === "") {
@@ -57,11 +58,11 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
       isValid = false;
     }
     if (+profile.weight <= 0) {
-      fe.weight = t("Entrez un chiffre supérieur à 0.");
+      fe.weight = t("Entrez un chiffre supérieur à 0");
       isValid = false;
     }
     if (+profile.weight > 500) {
-      fe.weight = t("Entrez un chiffre inférieur à 500.");
+      fe.weight = t("Entrez un chiffre inférieur à", { x: "500" });
       isValid = false;
     }
     if (profile.weight === "") {
@@ -69,11 +70,11 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
       isValid = false;
     }
     if (+profile.age <= 0) {
-      fe.age = t("Entrez un chiffre supérieur à 0.");
+      fe.age = t("Entrez un chiffre supérieur à 0");
       isValid = false;
     }
     if (+profile.age > 150) {
-      fe.age = t("Entrez un chiffre inférieur à 150.");
+      fe.age = t("Entrez un chiffre inférieur à", { x: "150" });
       isValid = false;
     }
     if (profile.age === "") {
@@ -95,8 +96,8 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
   return (
     <div>
       <div className={styles.text}>
-        <div>{t("Découvre quel joueur du Top 100 de FIFA 20 tu es.")}</div>
-        <div>{t("Pour commencer, remplis ces quelques informations.")}</div>
+        <div>{t("Découvre quel joueur du Top 100 de FIFA 20 tu es")}</div>
+        <div>{t("Pour commencer, remplis ces quelques informations")}</div>
       </div>
       <img
         src={require("../../../../assets/img/Step1.svg")}
@@ -159,7 +160,10 @@ export const Step1 = ({ setStep, profile, setProfile }: Step1Props) => {
         )}
         {formErrors.checked}
       </div>
-      <Button description={t("NEXT")} onClick={() => submit()} />
+      <Button
+        description={t("Suivant").toUpperCase()}
+        onClick={() => submit()}
+      />
     </div>
   );
 };
